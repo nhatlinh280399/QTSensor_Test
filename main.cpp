@@ -51,15 +51,15 @@ int main(int argc, char *argv[])
 	QObject::connect(timer, &QTimer::timeout, [=] {
 		qreal x = accReading->property("x").value<qreal>();
 		qreal y = accReading->value(1).value<qreal>();
-        qreal xRole = tiltReading->value(0).value<qreal>();
-        qreal yRole = tiltReading->value(1).value<qreal>();
+       	 	qreal xRole = tiltReading->value(0).value<qreal>();
+        	qreal yRole = tiltReading->value(1).value<qreal>();
 
 		qDebug() << "Accelerometer:" << x << y;
 
 		qDebug() << "Ambient Light:" << ambReading->lightLevel();
 		qDebug() << "Proximity:" << proxReading->close();
 
-        qDebug() << "Rotation: " << xRole << yRole;
+        	qDebug() << "Rotation: " << xRole << yRole;
 	});
 	timer->start(1000);
 
